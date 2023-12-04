@@ -34,14 +34,19 @@ def getItems():
 
 
 def displayItems(itemDict):
+
+    total_cost = 0
     print("Amount of pounds must be greater than 0.\n"
           "---------------------------------------")
 
     for i in itemDict:
+        total_cost += itemDict[i].calculate()
         print(f"Item: {itemDict[i].getName()}\n"
               f"Amount Ordered: {itemDict[i].getAmount()} pounds\n"
               f"Price per pound: {itemDict[i].getPrice()}\n"
               f"Price of order: {itemDict[i].calculate()}\n")
+
+    print(f"Total cost: ${total_cost}")
 
 
 def run():
